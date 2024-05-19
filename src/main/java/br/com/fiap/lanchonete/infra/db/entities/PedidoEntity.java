@@ -24,8 +24,7 @@ import java.time.LocalDateTime;
 public class PedidoEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idPedido;
 
     @Enumerated(EnumType.STRING)
     private StatusEnum status;

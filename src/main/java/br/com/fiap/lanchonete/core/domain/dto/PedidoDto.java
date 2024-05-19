@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class PedidoDto {
-	private Long id;
+	private Long idPedido;
 }

@@ -28,7 +28,7 @@ public class HistoricoPedidoEntity {
     private Long id;
     
     @ManyToOne
-    @JoinColumn(name = "pedido_id")
+    @JoinColumn(name = "pedido_idPedido", nullable = false)
     private PedidoEntity pedido;
 
     @Enumerated(EnumType.STRING)

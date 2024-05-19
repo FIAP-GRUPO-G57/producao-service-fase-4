@@ -35,7 +35,7 @@ public class PedidoControllerTest {
     void should_return_pedido_dto_on_receive_success() {
         Long pedidoId = 1L;
         Pedido pedido = new Pedido();
-        pedido.setId(pedidoId);
+        pedido.setIdPedido(pedidoId);
         PedidoDto pedidoDto = new PedidoDto();
 
         when(receivePedidoUsecase.receive(anyLong())).thenReturn(pedido);
@@ -52,7 +52,7 @@ public class PedidoControllerTest {
     void should_return_pedido_dto_on_complete_success() {
         Long pedidoId = 1L;
         Pedido pedido = new Pedido();
-        pedido.setId(pedidoId);
+        pedido.setIdPedido(pedidoId);
         PedidoDto pedidoDto = new PedidoDto();
 
         when(completePedidoUsecase.complete(anyLong())).thenReturn(pedido);
