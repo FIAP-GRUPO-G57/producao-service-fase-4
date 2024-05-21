@@ -16,7 +16,7 @@
     	<sonar.organization>fiap-grupo-g57</sonar.organization>
     	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
     	<sonar.token>${env.SONAR_TOKEN}</sonar.token>
-    	<sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    	<sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <dependencies>
@@ -146,7 +146,7 @@
       		<plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.11.0.3922</version>
+                <version>3.9.0.2155</version>
             </plugin>
     	</plugins>
     </build>
