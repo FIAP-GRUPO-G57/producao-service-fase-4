@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LanchoneteApplication {
+public class ProducaoServiceFase4Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LanchoneteApplication.class, args);
+		SpringApplication.run(ProducaoServiceFase4Application.class, args);
 	}
 
 }
