@@ -89,7 +89,7 @@ jacocoTestReport {
 
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
-			fileTree(dir: it, exclude: ['**/dto/**', '**/entities/**', '**/exception/**', '**/mappers/**', '**/validations/**'])
+			fileTree(dir: it, exclude: ['**/sun/**', '**/com/sun/**', '**/*$*'])
 		}))
 	}
 }
