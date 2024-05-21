@@ -13,12 +13,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -26,23 +23,16 @@ jobs:
           distribution: 'adopt'
           java-version: '17'
 
-      - name: Cache Maven packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-maven
-
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn clean package --batch-mode
 
-      - name: Run tests and generate coverage report
-        run: mvn test jacoco:report
+      - name: Run Unit Tests with JaCoCo
+        run: mvn test jacoco:report --batch-mode
 
       - name: List JaCoCo Report
         run: ls -alh target/site/jacoco/
 
       - name: SonarQube Scan
-        run: mvn -X sonar:sonar -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+        run: mvn sonar:sonar -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
