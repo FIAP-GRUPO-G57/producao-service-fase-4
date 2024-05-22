@@ -31,7 +31,7 @@ jobs:
           ./gradlew clean build --warning-mode all
 
       - name: Run JaCoCo
-        run: ./gradlew test jacocoTestReport
+        run: ./gradlew clean build jacocoTestReport
 
       - name: List JaCoCo Report
         run: ls -alh build/reports/jacoco/test/
