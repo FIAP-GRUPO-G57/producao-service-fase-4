@@ -35,6 +35,9 @@ jobs:
 
       - name: List JaCoCo Report
         run: ls -alh build/reports/jacoco/test/
+        
+      - name: List Build Files
+        run: ls -R build/classes/java/main
 
       - name: SonarQube Scan
         run: ./gradlew sonar -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml --warning-mode all
