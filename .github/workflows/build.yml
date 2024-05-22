@@ -28,7 +28,7 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          ./gradlew build --warning-mode all
+          ./gradlew clean build --warning-mode all
 
       - name: Run JaCoCo
         run: ./gradlew test jacocoTestReport
