@@ -13,7 +13,7 @@ import org.modelmapper.ModelMapper;
 
 import static org.mockito.Mockito.*;
 
-public class HistoricoPedidoPostgresqlRepositoryTest {
+public class HistoricoPedidoPostgresqlRepositoryTests {
 
     @Mock
     private HistoricoPedidoRepository historicoPedidoRepository;
