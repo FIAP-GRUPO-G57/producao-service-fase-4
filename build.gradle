@@ -49,7 +49,7 @@ dependencies {
 
 jar {
 	manifest {
-		attributes 'Main-Class': 'br.com.fiap.lanchonete.producaoservicefase4.ProducaoServiceFase4Application'
+		attributes 'Main-Class': 'br.com.fiap.lanchonete.ProducaoServiceFase4Application'
 	}
 
 	from sourceSets.main.output
