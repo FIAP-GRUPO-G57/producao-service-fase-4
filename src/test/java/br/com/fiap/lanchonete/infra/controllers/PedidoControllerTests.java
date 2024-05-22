@@ -17,7 +17,7 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class PedidoControllerTest {
+public class PedidoControllerTests {
 
     @Mock
     private ReceivePedidoUsecase receivePedidoUsecase;
