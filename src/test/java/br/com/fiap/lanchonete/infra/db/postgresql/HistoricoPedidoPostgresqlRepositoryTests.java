@@ -1,4 +1,4 @@
-package br.com.fiap.lanchonete.infra.db.postgresql;
+/*package br.com.fiap.lanchonete.infra.db.postgresql;
 
 import br.com.fiap.lanchonete.core.domain.entities.HistoricoPedido;
 import br.com.fiap.lanchonete.infra.db.entities.HistoricoPedidoEntity;
@@ -47,3 +47,5 @@ public class HistoricoPedidoPostgresqlRepositoryTests {
     }
     
 }
+
+*/

@@ -34,13 +34,18 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.modelmapper:modelmapper:2.4.4'
 	implementation 'org.apache.commons:commons-lang3:3.14.0'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws-messaging', version: '2.2.1.RELEASE'
+	implementation 'com.amazonaws:aws-java-sdk-sns:1.12.118'
+	implementation 'com.amazonaws:aws-java-sdk-core:1.12.118'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
-	runtimeOnly 'org.postgresql:postgresql'
+	//runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
@@ -93,4 +98,9 @@ jacocoTestReport {
 			fileTree(dir: it, exclude: ['**/mappers/**', '**/validations/**', '**/exception/**', '**/configuration/**'])
 		}))
 	}
+}
+
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-parameters'
 }

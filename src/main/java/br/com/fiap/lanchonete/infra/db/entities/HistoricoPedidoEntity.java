@@ -1,4 +1,4 @@
-package br.com.fiap.lanchonete.infra.db.entities;
+/* package br.com.fiap.lanchonete.infra.db.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,6 +13,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import br.com.fiap.lanchonete.core.domain.enums.StatusEnum;
 
 import java.time.LocalDateTime;
+
+
 
 @Data
 @NoArgsConstructor
@@ -41,3 +43,5 @@ public class HistoricoPedidoEntity {
     private LocalDateTime timestampAlteracao;
 
 }
+
+*/

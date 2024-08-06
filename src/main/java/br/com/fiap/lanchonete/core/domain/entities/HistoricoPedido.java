@@ -15,7 +15,7 @@ import lombok.ToString;
 @Builder
 @ToString
 public class HistoricoPedido {
-    private Long id;
+    private String id;
     private Long idPedido;
     private StatusEnum status;
     private LocalDateTime timestampCriacao;
