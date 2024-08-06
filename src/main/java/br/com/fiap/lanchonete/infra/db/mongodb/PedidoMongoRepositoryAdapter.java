@@ -25,6 +25,11 @@ public class PedidoMongoRepositoryAdapter implements PedidoRepositoryPort {
     public Pedido save(Pedido pedido) {
 
         PedidoMongoEntity mongoEntity = modelMapper.map(pedido, PedidoMongoEntity.class);
+        if (mongoEntity.getTimestampCriacao() != null) {
+            mongoEntity.markAsPersisted();  
+        }
+
+
          mongoEntity = pedidoMongoRepository.save(mongoEntity);
 
         return modelMapper.map(mongoEntity, Pedido.class);
@@ -32,7 +37,7 @@ public class PedidoMongoRepositoryAdapter implements PedidoRepositoryPort {
 
     @Override
     public Pedido get(Long id) {
-        PedidoMongoEntity mongoEntity = pedidoMongoRepository.findById(id.toString()).orElse(null);
+        PedidoMongoEntity mongoEntity = pedidoMongoRepository.findById(id).orElse(null);
         if (mongoEntity == null) {
             return null;
         }

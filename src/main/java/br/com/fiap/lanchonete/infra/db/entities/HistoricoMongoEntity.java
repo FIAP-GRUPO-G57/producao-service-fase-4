@@ -1,6 +1,8 @@
 package br.com.fiap.lanchonete.infra.db.entities;
 
+import java.time.Instant;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -10,7 +12,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import java.time.LocalDateTime;
+
 
 @ToString
 @Document(collection = "historico")
@@ -30,5 +32,6 @@ public class HistoricoMongoEntity {
     private StatusEnum status;
 
     @Field("timestampCriacao")
-    private LocalDateTime timestampCriacao;
+    @LastModifiedDate
+    private Instant timestampCriacao;
 }

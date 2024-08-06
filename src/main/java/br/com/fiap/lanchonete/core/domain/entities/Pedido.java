@@ -1,6 +1,7 @@
 package br.com.fiap.lanchonete.core.domain.entities;
 
-import java.time.LocalDateTime;
+
+import java.time.Instant;
 
 import br.com.fiap.lanchonete.core.domain.enums.StatusEnum;
 import lombok.AllArgsConstructor;
@@ -17,6 +18,6 @@ import lombok.ToString;
 public class Pedido {
     private Long idPedido;
     private StatusEnum status;
-    private LocalDateTime timestampCriacao;
-    private LocalDateTime timestampAlteracao;
+    private Instant timestampCriacao;
+    private Instant timestampAlteracao;
 }

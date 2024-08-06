@@ -6,6 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import br.com.fiap.lanchonete.infra.db.entities.PedidoMongoEntity;
 
 
-public interface PedidoMongoRepository extends MongoRepository<PedidoMongoEntity, String> {
+public interface PedidoMongoRepository extends MongoRepository<PedidoMongoEntity, Long> {
 
 }
