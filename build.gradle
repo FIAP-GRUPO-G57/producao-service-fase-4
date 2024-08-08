@@ -53,6 +53,15 @@ dependencies {
 	// Replace the following with the starter dependencies of specific modules you wish to use
 	implementation 'io.awspring.cloud:spring-cloud-aws-starter-sqs'
 
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation platform('org.testcontainers:testcontainers-bom:1.20.1') //import bom
+	testImplementation('org.testcontainers:localstack') //no version specified
+	testImplementation('org.testcontainers:mongodb')
+	testImplementation "org.testcontainers:junit-jupiter:1.20.1"
+
+
+
 }
 
 
@@ -67,6 +76,8 @@ jar {
 
 	from sourceSets.main.output
 }
+
+
 
 test {
 	useJUnitPlatform()

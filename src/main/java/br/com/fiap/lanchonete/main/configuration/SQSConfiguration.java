@@ -3,6 +3,8 @@ package br.com.fiap.lanchonete.main.configuration;
 import br.com.fiap.lanchonete.infra.messaging.SQSMessageListener;
 import io.awspring.cloud.sqs.config.SqsBootstrapConfiguration;
 import io.awspring.cloud.sqs.config.SqsMessageListenerContainerFactory;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,16 +17,26 @@ import software.amazon.awssdk.services.sqs.SqsAsyncClient;
 
 import java.net.URI;
 
-@Import(SqsBootstrapConfiguration.class)
+//@Import(SqsBootstrapConfiguration.class)
 @Configuration
 public class SQSConfiguration {
+
+    @Value("${spring.cloud.aws.sqs.endpoint}")
+    private String sqsEndpoint;
+
+    @Value("${spring.cloud.aws.credentials.access-key}")
+    private String accessKeyId;
+
+    @Value("${spring.cloud.aws.credentials.secret-key}")
+    private String secretAccessKey;
+
 
     @Bean
     public SqsAsyncClient sqsAsyncClient() {
         return SqsAsyncClient.builder()
                 .region(Region.US_EAST_1)
-                .endpointOverride(URI.create("http://localhost:4566"))
-                .credentialsProvider(StaticCredentialsProvider.create(AwsBasicCredentials.create("test", "test")))
+                .endpointOverride(URI.create(sqsEndpoint.trim()))
+                .credentialsProvider(StaticCredentialsProvider.create(AwsBasicCredentials.create(accessKeyId, secretAccessKey)))
                 .build();
     }
 
