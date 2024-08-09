@@ -1,4 +1,4 @@
-package br.com.fiap.lanchonete.infra.db.postgresql;
+/* package br.com.fiap.lanchonete.infra.db.postgresql;
 
 import br.com.fiap.lanchonete.core.domain.entities.Pedido;
 import br.com.fiap.lanchonete.core.usecases.ports.repositories.PedidoRepositoryPort;
@@ -9,6 +9,7 @@ import br.com.fiap.lanchonete.infra.db.repositories.PedidoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class PedidoPostgresqlRepository implements PedidoRepositoryPort {
@@ -34,3 +35,5 @@ public class PedidoPostgresqlRepository implements PedidoRepositoryPort {
 	}
 	
 }
+
+*/

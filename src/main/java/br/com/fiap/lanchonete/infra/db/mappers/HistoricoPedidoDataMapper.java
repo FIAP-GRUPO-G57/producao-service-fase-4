@@ -1,4 +1,4 @@
-package br.com.fiap.lanchonete.infra.db.mappers;
+/*package br.com.fiap.lanchonete.infra.db.mappers;
 
 import br.com.fiap.lanchonete.core.domain.entities.HistoricoPedido;
 import br.com.fiap.lanchonete.infra.db.entities.HistoricoPedidoEntity;
@@ -24,3 +24,5 @@ public class HistoricoPedidoDataMapper {
 	}
 	
 }
+
+*/

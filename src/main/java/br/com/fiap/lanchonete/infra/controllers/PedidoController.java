@@ -19,13 +19,13 @@ public class PedidoController {
 	private final ModelMapper modelMapper;
 
 	@PostMapping("/pedidos/{id}")
-	public ResponseEntity<PedidoDto> receivePedido(@PathVariable Long id) {
+	public ResponseEntity<PedidoDto> receivePedido(@PathVariable(name = "id") Long id) {
 		Pedido pedido = receivePedidoUsecase.receive(id);
 		return ResponseEntity.ok(modelMapper.map(pedido, PedidoDto.class));
 	}
 
 	@PatchMapping("/pedidos/{id}")
-	public ResponseEntity<PedidoDto> processarPedido(@PathVariable Long id) {
+	public ResponseEntity<PedidoDto> processarPedido(@PathVariable(name = "id") Long id) {
 		Pedido pedido = completePedidoUsecase.complete(id);
 		return ResponseEntity.ok(modelMapper.map(pedido, PedidoDto.class));
 	}

@@ -1,4 +1,4 @@
-package br.com.fiap.lanchonete.infra.db.postgresql;
+/*package br.com.fiap.lanchonete.infra.db.postgresql;
 
 import br.com.fiap.lanchonete.core.domain.entities.Pedido;
 import br.com.fiap.lanchonete.infra.db.entities.PedidoEntity;
@@ -81,3 +81,5 @@ public class PedidoPostgresqlRepositoryTests {
         verify(modelMapper, times(1)).map(pedidoEntity, Pedido.class);
     }
 }
+
+*/
